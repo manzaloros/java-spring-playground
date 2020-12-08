@@ -18,8 +18,9 @@ public class MathServiceTest {
         assertEquals("5 + 3 = 8", mathService.add());
     }
 
+    @Test
     void additionIndefiniteArgs() {
         List<String> numbers = Arrays.asList("5", "4", "3");
-        assertEquals("5 + 4 + 3 = 12", mathServiceIndefinite.add());
+        assertEquals("5 + 4 + 3 = 12", mathServiceIndefinite.add(numbers));
     }
 }
