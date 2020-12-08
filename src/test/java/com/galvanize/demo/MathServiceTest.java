@@ -9,12 +9,12 @@ import static org.junit.jupiter.api.Assertions.assertEquals;
 
 public class MathServiceTest {
 
-    private final MathService mathService = new MathService("5", "3");
+    private final MathService mathService = new MathService("6", "3");
     private final MathService mathServiceIndefinite = new MathService();
 
     @Test
     void addition() {
-        assertEquals("5 + 3 = 8", mathService.add());
+        assertEquals("6 + 3 = 9", mathService.add());
     }
 
     @Test
@@ -25,6 +25,16 @@ public class MathServiceTest {
 
     @Test
     void multiply() {
-        assertEquals("5 * 3 = 15", mathService.multiply());
+        assertEquals("6 * 3 = 18", mathService.multiply());
+    }
+
+    @Test
+    void subtract() {
+        assertEquals("6 - 3 = 3", mathService.subtract());
+    }
+
+    @Test
+    void divide() {
+        assertEquals("6 / 3 = 2", mathService.divide());
     }
 }
