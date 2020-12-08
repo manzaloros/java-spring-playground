@@ -27,8 +27,6 @@ public class PiController {
         if (map.containsKey("operation")) {
             String operation = (String) map.get("operation");
             switch (operation) {
-                case "add":
-                    return mathService.add();
                 case "multiply":
                     return mathService.multiply();
                 case "subtract":
@@ -39,9 +37,7 @@ public class PiController {
         }
 
         /* Default Addition Case: */
-//        result = x + y;
-//        return x + " + " + y + " = " + result;
-        return "default";
+        return mathService.add();
     }
 
     @PostMapping("/sum")
