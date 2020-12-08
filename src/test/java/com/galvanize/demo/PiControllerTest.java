@@ -49,5 +49,9 @@ public class PiControllerTest {
                 .andExpect(status().isOk())
                 .andExpect(content().string("30 + 5 = 35"));
 
+        this.mvc.perform(post("/math/sum?n=4&n=5&n=6"))
+                .andExpect(status().isOk())
+                .andExpect(content().string("4 + 5 + 6 = 15"));
+
     }
 }
