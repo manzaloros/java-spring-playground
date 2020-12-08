@@ -19,29 +19,34 @@ public class PiController {
 
     @GetMapping("/calculate")
     public String math(@RequestParam Map map) {
-        int x = parseInt((String) map.get("x"));
-        int y = parseInt((String) map.get("y"));
-        int result;
+        String x = (String) map.get("x");
+        String y = (String) map.get("y");
+        int result = 0;
+        MathService mathService = new MathService(x, y);
+
         if (map.containsKey("operation")) {
             String operation = (String) map.get("operation");
-            System.out.println("op:" + operation);
             switch (operation) {
                 case "add":
-                    result = x + y;
-                    return x + " + " + y + " = " + result;
-                case "multiply":
-                    result = x * y;
-                    return x + " * " + y + " = " + result;
-                case "subtract":
-                    result = x - y;
-                    return x + " - " + y + " = " + result;
-                case "divide":
-                    result = x / y;
-                    return x + " / " + y + " = " + result;
+                    /*result = x + y;
+                    return x + " + " + y + " = " + result;*/
+                return mathService.add();
+//                case "multiply":
+//                    result = x * y;
+//                    return x + " * " + y + " = " + result;
+//                case "subtract":
+//                    result = x - y;
+//                    return x + " - " + y + " = " + result;
+//                case "divide":
+//                    result = x / y;
+//                    return x + " / " + y + " = " + result;
             }
         }
-        result = x + y;
-        return x + " + " + y + " = " + result;
+
+        /* Default Addition Case: */
+//        result = x + y;
+//        return x + " + " + y + " = " + result;
+        return "default";
     }
 
     @PostMapping("/sum")
