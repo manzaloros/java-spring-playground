@@ -31,12 +31,10 @@ public class PiController {
                     return mathService.add();
                 case "multiply":
                     return mathService.multiply();
-//                case "subtract":
-//                    result = x - y;
-//                    return x + " - " + y + " = " + result;
-//                case "divide":
-//                    result = x / y;
-//                    return x + " / " + y + " = " + result;
+                case "subtract":
+                    return mathService.subtract();
+                case "divide":
+                    return mathService.divide();
             }
         }
 

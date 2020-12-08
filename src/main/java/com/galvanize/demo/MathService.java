@@ -17,6 +17,16 @@ public class MathService {
         return this.x + " * " + this.y + " = " + result;
     }
 
+    public String subtract() {
+        result = this.x - this.y;
+        return this.x + " - " + this.y + " = " + result;
+    }
+
+    public String divide() {
+        result = this.x / this.y;
+        return this.x + " / " + this.y + " = " + result;
+    }
+
     public MathService(String x, String y) {
         this.x = parseInt(x);
         this.y = parseInt(y);
