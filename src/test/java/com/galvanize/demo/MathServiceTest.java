@@ -2,7 +2,6 @@ package com.galvanize.demo;
 
 import org.junit.jupiter.api.Test;
 
-import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.List;
 
@@ -22,5 +21,10 @@ public class MathServiceTest {
     void additionIndefiniteArgs() {
         List<String> numbers = Arrays.asList("5", "4", "3");
         assertEquals("5 + 4 + 3 = 12", mathServiceIndefinite.add(numbers));
+    }
+
+    @Test
+    void multiply() {
+        assertEquals("5 * 3 = 15", mathService.multiply());
     }
 }
