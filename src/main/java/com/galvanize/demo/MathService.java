@@ -14,17 +14,17 @@ public class MathService {
         return this.x + " + " + this.y + " = " + result;
     }
 
-    public String add(List<String> nums) {
+    public String add(List<String> numbers) {
         StringBuilder response = new StringBuilder();
         int result = 0;
-        int size = nums.size();
+        int size = numbers.size();
 
-        for (String number : nums) {
+        for (String number : numbers) {
             result += Integer.parseInt(number);
         }
 
         for (int i = 0; i < size; i += 1) {
-            String num = nums.get(i);
+            String num = numbers.get(i);
             if (i != size - 1) {
                 response.append(num).append(" + ");
             } else {
