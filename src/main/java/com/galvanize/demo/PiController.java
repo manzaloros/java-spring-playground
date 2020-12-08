@@ -21,7 +21,6 @@ public class PiController {
     public String math(@RequestParam Map map) {
         String x = (String) map.get("x");
         String y = (String) map.get("y");
-        int result = 0;
         MathService mathService = new MathService(x, y);
 
         if (map.containsKey("operation")) {
@@ -45,24 +44,8 @@ public class PiController {
             @RequestParam
             MultiValueMap<String, String>
             queryMap) {
-        StringBuilder response = new StringBuilder();
         List<String> numbers = queryMap.get("n");
-        int result = 0;
-        int size = numbers.size();
-
-        for (String number : numbers) {
-            result += Integer.parseInt(number);
-        }
-
-        for (int i = 0; i < size; i += 1) {
-            String num = numbers.get(i);
-            if (i != size - 1) {
-                response.append(num).append(" + ");
-            } else {
-                response.append(num).append(" = ").append(result);
-            }
-        }
-
-        return response.toString();
+        MathService mathService = new MathService();
+        return mathService.add(numbers);
     }
 }
