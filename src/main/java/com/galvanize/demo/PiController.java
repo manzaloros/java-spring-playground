@@ -28,12 +28,9 @@ public class PiController {
             String operation = (String) map.get("operation");
             switch (operation) {
                 case "add":
-                    /*result = x + y;
-                    return x + " + " + y + " = " + result;*/
-                return mathService.add();
-//                case "multiply":
-//                    result = x * y;
-//                    return x + " * " + y + " = " + result;
+                    return mathService.add();
+                case "multiply":
+                    return mathService.multiply();
 //                case "subtract":
 //                    result = x - y;
 //                    return x + " - " + y + " = " + result;
