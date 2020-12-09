@@ -21,7 +21,7 @@ public class AreaControllerTest {
     @Test
     void circle() throws Exception {
         String expectedResponse =
-                "Area of a circle with a radius of 4 is 50.26548";
+                "Area of a circle with a radius of 4 is 50.26548245743669";
         MockHttpServletRequestBuilder request = post("/math/area")
                 .contentType(MediaType.APPLICATION_FORM_URLENCODED)
                 .param("type", "circle")

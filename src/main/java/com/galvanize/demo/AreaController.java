@@ -16,8 +16,17 @@ public class AreaController {
 
         if (type.equals("circle")) {
             int radius = Integer.parseInt(body.get("radius"));
-            double result = (Math.PI * Math.pow(radius, 2));
-            response += result;
+            String result = String.valueOf(Math.PI * Math.pow(radius, 2));
+            response += "Area of a circle with a radius of 4 is " + result;
+        } else if (type.equals("rectangle")) {
+            if (body.containsKey("radius")) {
+                response = "Invalid";
+                return response;
+            }
+            int width = Integer.parseInt(body.get("width"));
+            int height = Integer.parseInt(body.get("height"));
+            String result = String.valueOf(width * height);
+            response += "Area of a 4x7 rectangle is " + result;
         }
         return response;
     }
