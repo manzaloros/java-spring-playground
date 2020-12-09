@@ -13,7 +13,6 @@ public class AreaController {
     public String calculateArea(@RequestParam Map<String, String> body) {
         String type = body.get("type");
         String response = "";
-
         if (type.equals("circle")) {
             int radius = Integer.parseInt(body.get("radius"));
             String result = String.valueOf(Math.PI * Math.pow(radius, 2));
@@ -25,6 +24,7 @@ public class AreaController {
             }
             int width = Integer.parseInt(body.get("width"));
             int height = Integer.parseInt(body.get("height"));
+
             String result = String.valueOf(width * height);
             response += "Area of a 4x7 rectangle is " + result;
         }
