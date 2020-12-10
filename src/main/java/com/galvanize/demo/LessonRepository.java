@@ -6,5 +6,5 @@ import org.springframework.data.repository.CrudRepository;
 // When app starts, Spring JPA scans for all interfaces that extend
 // CrudRepository
 public interface LessonRepository extends CrudRepository<Lesson, Long> {
-
+    Lesson findByTitle(String title);
 }

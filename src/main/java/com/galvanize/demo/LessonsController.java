@@ -31,6 +31,11 @@ public class LessonsController {
         return this.repository.findById(id);
     }
 
+    @GetMapping("/find/{title}")
+    public Lesson findByTitle(@PathVariable String title) {
+        return this.repository.findByTitle(title);
+    }
+
     // Deserializes body of request into a Lesson object
     // Adds row to database and gets ID back
     // Repository adds ID to Lesson object and returns it to controller
