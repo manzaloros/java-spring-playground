@@ -2,6 +2,10 @@ package com.galvanize.demo;
 
 import org.springframework.web.bind.annotation.*;
 
+import java.text.DateFormat;
+import java.text.ParseException;
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.Optional;
 
 @RestController
@@ -34,6 +38,16 @@ public class LessonsController {
     @GetMapping("/find/{title}")
     public Lesson findByTitle(@PathVariable String title) {
         return this.repository.findByTitle(title);
+    }
+
+    @GetMapping("/between")
+    public Iterable<Lesson> findByDateBetween(@RequestParam String date1,
+                                    @RequestParam String date2)
+            throws ParseException {
+        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        Date startDate = format.parse(date1);
+        Date endDate = format.parse(date2);
+        return this.repository.findByDeliveredOnBetween(startDate, endDate);
     }
 
     // Deserializes body of request into a Lesson object
