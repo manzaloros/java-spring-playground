@@ -5,16 +5,21 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import javax.persistence.*;
 import java.sql.Date;
 
+// Backed by a DB (Entity)
+// Looks at SQL database and reviews differences in schema
+// Normally you wouldn't want JPA to auto generate schema like this
+// It is optional to keep the schema in sync
 @Entity
 @Table(name = "lessons")
 public class Lesson {
 
+    // Primary key
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private String title;
 
-
+    // Fields for db
     @Column(columnDefinition = "date")
     @JsonFormat(pattern = "yyyy-MM-dd")
     private Date deliveredOn;
