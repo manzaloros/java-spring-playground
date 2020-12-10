@@ -37,6 +37,7 @@ public class LessonsController {
 
     @GetMapping("/find/{title}")
     public Lesson findByTitle(@PathVariable String title) {
+
         return this.repository.findByTitle(title);
     }
 
