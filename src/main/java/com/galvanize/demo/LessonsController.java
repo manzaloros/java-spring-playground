@@ -42,4 +42,9 @@ public class LessonsController {
         return this.repository.save(lesson);
     }
 
+    @DeleteMapping("/{id}")
+    public void delete(@PathVariable Long id) {
+        this.repository.deleteById(id);
+    }
+
 }
