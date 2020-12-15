@@ -11,9 +11,11 @@ import java.util.Map;
 public class WordCounter {
 
     // Bean annotation causing problems
-    public Map<String, Integer> count(String word) {
+    public Map<String, Integer> count(String sentence) {
+
         Map<String, Integer> counter = new HashMap<>();
-        String[] words = word.split(" ");
+        String[] words = sentence.replaceAll("[^a-zA-Z ]", "")
+                .toLowerCase().split("\\s+");
 
         for (String currentWord : words) {
             if (!counter.containsKey(currentWord)) {

@@ -11,8 +11,9 @@ import java.util.Map;
 public class WordCounterController {
 
     /* Also works: @Autowired annotation: */
+    /* Final means it will always stay the same value: */
 //    @Autowired
-    private WordCounter wordCounter;
+    private final WordCounter wordCounter;
 
     /* Using constructor injection: */
     public WordCounterController(WordCounter wordCounter) {
@@ -21,7 +22,6 @@ public class WordCounterController {
 
     @PostMapping("/words/count")
     public Map<String, Integer> countWords(@RequestBody String body) {
-//        WordCounter counter = new WordCounter();
         return wordCounter.count(body);
     }
 }
