@@ -1,4 +1,4 @@
-package com.galvanize.demo;
+package com.galvanize.springplayground;
 
 import java.util.List;
 

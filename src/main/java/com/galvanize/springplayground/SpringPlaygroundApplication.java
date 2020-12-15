@@ -1,4 +1,4 @@
-package com.galvanize.demo;
+package com.galvanize.springplayground;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
