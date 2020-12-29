@@ -2,6 +2,7 @@ package com.galvanize.springplayground;
 
 import org.springframework.web.bind.annotation.*;
 
+import javax.swing.*;
 import java.text.DateFormat;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
@@ -45,18 +46,18 @@ public class LessonsController {
     public Iterable<Lesson> findByDateBetween(@RequestParam String date1,
                                     @RequestParam String date2)
             throws ParseException {
-        DateFormat format = new SimpleDateFormat("yyyy-MM-dd");
+        DateFormat format = new SimpleDateFormat("yy)~yy-MM-dd");
         Date startDate = format.parse(date1);
         Date endDate = format.parse(date2);
         return this.repository.findByDeliveredOnBetween(startDate, endDate);
     }
 
-    // Deserializes body of request into a Lesson object
-    // Adds row to database and gets ID back
-    // Repository adds ID to Lesson object and returns it to controller
-    // Controller serializes the Lesson object to JSON with the ID returned
-    // Spring will construct an HTTP response with the returned object and
-    // sends it to the client
+    /* Deserializes body of request into a Lesson object
+     Adds row to database and gets ID back
+     Repository adds ID to Lesson object and returns it to controller
+     Controller serializes the Lesson object to JSON with the ID returned
+     Spring will construct an HTTP response with the returned object and
+     sends it to the client*/
     @PostMapping("")
     public Lesson create(@RequestBody Lesson lesson) {
         return this.repository.save(lesson);
